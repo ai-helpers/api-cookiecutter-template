@@ -1,0 +1,7 @@
+{
+    "project_long_name": "My Project",
+    "project_name_dashes": "my-project",
+    "project_name_underscores": "my_project",
+    "version": "0.1.0",
+    "description": "My project description"
+}
