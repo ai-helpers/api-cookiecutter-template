@@ -1,0 +1,17 @@
+# https://git-scm.com/docs/gitignore
+
+# OS
+.DS_Store
+
+# IDE
+/.idea/
+/.vscode/
+
+# Python
+.venv/
+*.py[cod]
+__pycache__/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
