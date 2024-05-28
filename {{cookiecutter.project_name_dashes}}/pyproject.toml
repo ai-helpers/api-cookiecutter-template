@@ -17,6 +17,37 @@ pydantic-settings = "^2.2.1"
 setuptools = "^70.0.0"
 uvicorn = "^0.29.0"
 
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.7.0"
+pytest = "^8.1.1"
+pytest-cookies = "^0.7.0"
+pytest-shell-utilities = "^1.9.0"
+
+[tool.poetry.group.commits.dependencies]
+commitizen = "^3.18.3"
+pre-commit = "^3.6.2"
+
+[tool.poetry.group.checkers.dependencies]
+bandit = "^1.7.8"
+coverage = "^7.4.3"
+moto = "^5.0.3"
+mypy = "^1.9.0"
+pytest = "^8.1.1"
+pytest-cov = "^4.1.0"
+pytest-xdist = "^3.5.0"
+ruff = "^0.3.3"
+
+[tool.poetry.group.notebooks.dependencies]
+ipykernel = "^6.29.3"
+nbformat = "^5.10.2"
+
+[tool.poetry.group.publishers.dependencies]
+twine = "^5.0.0"
+
+[tool.poetry.group.documenters.dependencies]
+myst-parser = "^2.0.0"
+sphinx = "^7.2.6"
+sphinx-rtd-theme = "^2.0.0"
 
 [build-system]
 requires = ["poetry-core"]

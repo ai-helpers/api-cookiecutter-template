@@ -1,0 +1,21 @@
+name: API FastAPI template - Cookiecutter
+on:
+  - push
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  cookiecutter:
+    name: Test of Cookiecutter instantiating
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Install PyTest
+      run: |
+        python -m pip install -U pip
+        python -m pip install -U pytest pytest-cookies
+    - name: Run tests
+      run: |
+        pytest --keep-baked-projects test_cookiecutter.py
