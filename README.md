@@ -2,6 +2,8 @@
 
 This template streamlines your FastAPI development, providing a robust foundation built on best practices.
 
+Contributions are welcome!
+
 # Table of Content (ToC)
 
 - [Cookiecutter API Template based on FastAPI](#cookiecutter-api-template-based-on-fastapi)
