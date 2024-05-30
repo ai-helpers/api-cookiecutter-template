@@ -1,29 +1,31 @@
-name: Run tests and code quality checks
+name: Checkers - Quality
+
 on:
   push:
     branches:
       - "**"
     tags-ignore:
       - "**"
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
-  code-quality-checkers:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-      - name: Install Project
-        uses: ./.github/actions/install-project
-      - name: Code quality checks
-        run: echo code-quality-checkers # TODO: Add code quality checks
-
-  tests:
-    runs-on: decathlon
-    steps:
-      - name: Pre/Post Cleaners
-        uses: dktunited/.github/actions/cleaner@main
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-      - name: Install Project
-        uses: ./.github/actions/install-project
-      - name: Tests
-        run: echo tests # TODO: Add tests
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: "1.8.1"
+      - name: Install
+        run: poetry install --with dev
+      - name: Checkers
+        run: make checkers
