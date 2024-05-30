@@ -83,7 +83,7 @@ plugins = ["pydantic.mypy", "numpy.typing.mypy_plugin"]
 
 [tool.pytest.ini_options]
 addopts = "--verbosity=2"
-pythonpath = ["{{cookiecutter.project_name_underscores}}"]}}"]
+pythonpath = ["{{cookiecutter.project_name_underscores}}"]
 
 [tool.ruff]
 fix = true
