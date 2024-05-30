@@ -1,0 +1,8 @@
+# https://python-poetry.org/docs/configuration/
+
+[virtualenvs]
+# create a local virtualenv in the .venv directory
+in-project = true
+# prefer active python instead of system to create virtualenv
+prefer-active-python = true
+
