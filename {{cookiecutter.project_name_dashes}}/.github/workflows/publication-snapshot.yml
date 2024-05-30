@@ -5,11 +5,7 @@
 #   * should be published on the 'snapshot' artifact repository
 #   * Can be deleted once published on the 'snapshot' CA repository.
 name: Publish snapshot artifacts
-on:
-  push:
-    branches:
-      - feat*/*
-  workflow_dispatch:
+on: workflow_dispatch
 
 permissions:
   id-token: write

@@ -7,10 +7,9 @@
 name: Publish release artifacts
 on:
   release:
-    types: [ 'published', 'edited' ]
-    branches:
-      - main
-  workflow_dispatch:
+    types:
+      - edited
+      - published
 permissions:
   id-token: write
   contents: read
