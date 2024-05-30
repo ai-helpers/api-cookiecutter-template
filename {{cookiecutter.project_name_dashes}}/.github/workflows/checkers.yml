@@ -1,0 +1,29 @@
+name: Run tests and code quality checks
+on:
+  push:
+    branches:
+      - "**"
+    tags-ignore:
+      - "**"
+jobs:
+  code-quality-checkers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Project
+        uses: ./.github/actions/install-project
+      - name: Code quality checks
+        run: echo code-quality-checkers # TODO: Add code quality checks
+
+  tests:
+    runs-on: decathlon
+    steps:
+      - name: Pre/Post Cleaners
+        uses: dktunited/.github/actions/cleaner@main
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Project
+        uses: ./.github/actions/install-project
+      - name: Tests
+        run: echo tests # TODO: Add tests

@@ -1,0 +1,21 @@
+# Publish the snapshot artifacts.
+# Snapshot artifacts::
+#   * should have X.Y.Z.devn versions
+#   * are used for development and testing, they don't have to be fully tested
+#   * should be published on the 'snapshot' artifact repository
+#   * Can be deleted once published on the 'snapshot' CA repository.
+name: Publish snapshot artifacts
+on:
+  push:
+    branches:
+      - feat*/*
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  ENV: snapshot
+
+jobs: # TODO: Add jobs

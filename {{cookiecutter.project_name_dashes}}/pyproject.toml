@@ -55,3 +55,48 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.plugins."console_scripts"]
 "{{cookiecutter.project_name_dashes}}" = "{{cookiecutter.project_name_underscores}}.cli:start_api"
+
+# CONFIGURATIONS
+
+[tool.bandit]
+targets = ["src"]
+skips = ["B101", "B601", "B104", "B301"]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "pep440"
+version_provider = "poetry"
+update_changelog_on_bump = false
+
+[tool.coverage.run]
+branch = true
+source = ["{{cookiecutter.project_name_underscores}}"]
+omit = ["__init__.py"]
+
+[tool.mypy]
+pretty = true
+strict = true
+python_version = "3.10"
+ignore_missing_imports = true
+plugins = ["pydantic.mypy", "numpy.typing.mypy_plugin"]
+
+[tool.pytest.ini_options]
+addopts = "--verbosity=2"
+pythonpath = ["{{cookiecutter.project_name_underscores}}"]}}"]
+
+[tool.ruff]
+fix = true
+indent-width = 4
+line-length = 100
+target-version = "py310"
+exclude = ["notebooks/"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["D100", "D103"]
