@@ -1,8 +1,12 @@
 {
     "_tech_name": "fastapi",
+
     "project_long_name": "My Project",
     "project_name_dashes": "{{cookiecutter.project_long_name.lower().replace(' ', '-').replace('_', '-')}}",
     "project_name_underscores": "{{cookiecutter.project_name_dashes.replace('-', '_')}}",
     "version": "0.1.0",
-    "description": "My project description"
+    "description": "My project description",
+
+    "python_version": ["3.8", "3.9", "3.10", "3.12"],
+    "poetry_version": "1.8.1"
 }
