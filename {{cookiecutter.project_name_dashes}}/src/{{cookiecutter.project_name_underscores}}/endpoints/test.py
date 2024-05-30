@@ -3,7 +3,7 @@ import fastapi
 from {{cookiecutter.project_name_underscores}}.endpoints.router import router
 
 DEFAULT_OUTPUT = {
-    "feature_1": {"type": "float64", "example": -0.02596975},
+    "example": {"type": "float64", "example": -0.02596975},
 }
 
 def format_output_json(dict_):
