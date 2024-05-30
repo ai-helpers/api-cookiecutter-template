@@ -3,7 +3,8 @@ import pydantic
 import pickle
 import pathlib
 from cachetools.func import ttl_cache
-import pandas as pd
+from typing import Union
+
 
 from {{cookiecutter.project_name_underscores}}.errors import (APIModelNotFoundError,
                                  APIModelNotLoadableError)
@@ -14,7 +15,7 @@ def load_model(settings: Settings):
     logger = logging.getLogger(__name__)
     logger.setLevel(settings.log_level)
 
-    model_external_url: str = settings.model_external_url
+    model_external_url: Union[str, pathlib.Path] = settings.model_external_url
    
     logger.info("[API::load_model] Machine Learning (ML) model " \
                 f"pickle file: {model_external_url}")
