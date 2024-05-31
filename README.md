@@ -4,6 +4,8 @@ This template streamlines your FastAPI development, providing a robust foundatio
 
 Contributions are welcome!
 
+![Demo App](_static/gif-cruft-template.gif)
+
 # Table of Content (ToC)
 
 - [Cookiecutter API Template based on FastAPI](#cookiecutter-api-template-based-on-fastapi)
