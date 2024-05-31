@@ -3,7 +3,7 @@ import pydantic
 import typing
 
 from {{cookiecutter.project_name_underscores}}.settings.defaults import (
-    MODEL_EXTERNAL_URL,
+    AI_MODEL_EXTERNAL_URL,
     DATA_LOADER_MODULE,
     LOCAL_DIR,
     LOCAL_TEMP_DIR,
@@ -106,13 +106,13 @@ def _add_local_temp_dir(parser: argparse.ArgumentParser) -> argparse.ArgumentPar
    )
    return parser
 
-def _add_model_external_url(parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
+def _add_ai_model_external_url(parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
    parser.add_argument(
       "-m", "--model-external-url",
-      help=f"URL (if remote) or file-path (if local) of the Pickled/serialized ML model (e.g., '{MODEL_EXTERNAL_URL}').",
-      dest="model_external_url",
+      help=f"URL (if remote) or file-path (if local) of the Pickled/serialized ML model (e.g., '{AI_MODEL_EXTERNAL_URL}').",
+      dest="ai_model_external_url",
       action="store",
-      default=MODEL_EXTERNAL_URL
+      default=AI_MODEL_EXTERNAL_URL
    )
    return parser
 
@@ -133,7 +133,7 @@ def _get_arg_parser() -> argparse.ArgumentParser:
    parser = _add_data_loader_module(parser)
    parser = _add_local_dir(parser)
    parser = _add_local_temp_dir(parser)
-   parser = _add_model_external_url(parser)
+   parser = _add_ai_model_external_url(parser)
    
    return parser
 

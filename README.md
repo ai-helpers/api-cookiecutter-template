@@ -35,6 +35,8 @@ Contributions are welcome!
 * **Linting:** Pre-commit hooks with Black for consistent code formatting.
 * **Logging:** Structured logging with Loguru for better debugging and monitoring.
 
+See [here](https://github.com/ai-helpers/example-api-template) an example for project instantiation.
+
 ## Prerequisites
 
 Ensure you have the following tools installed:
@@ -161,7 +163,37 @@ These commands will ensure that your pip is up to date, install pytest and pytes
 Implementation of these tests in GitHub Actions is straightforward. You can see an example configuration in the `.github/workflows/main.yml` file. This setup ensures that tests are run automatically on each push or pull request, providing continuous integration and ensuring code quality.
 
 ## Project Structure
-> TODO: Describe the directory layout and purpose of each component in the project.
+
+  ├── .github             <- 
+  ├── {{cookiecutter.project_name_dashes}}
+  │   ├── .github                                         <- Github Actions CICD
+  │   ├── data
+  │   ├── docs                                            <- Sphinx documentation
+  │   ├── src   
+  │       └── {{cookiecutter.project_name_underscores}}   <- Core of project
+  │   │       ├── endpoints                               <- API endpoints definition
+  │   │       ├── settings                                <- settings
+  │   │       ├── __init__.py      
+  │   │       ├── app.py           
+  │   │       ├── cli.py           
+  │   │       ├── errors           
+  │   │       ├── load_model.py    
+  │   │       └── setup_logging.py 
+  │   ├── tasks                                           <- Makefile tasks
+  │   ├── tests                                           <- tests (units tests, data tests)
+  │   ├── .gitignore          
+  │   ├── .mypy.ini   
+  │   ├── Makefile   
+  │   ├── poetry.toml                       
+  │   ├── pyproject.toml   
+  │   ├── README.md    
+  ├── .gitignore  
+  ├── .python-version            
+  ├── CONTRIBUTING.md            
+  ├── cookiecutter.json            
+  ├── README.md            
+  ├── test_cookiecutter.py            
+  └── VERSION
 
 ## Contributions
 

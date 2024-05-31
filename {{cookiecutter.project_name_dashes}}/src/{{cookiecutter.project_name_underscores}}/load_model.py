@@ -15,13 +15,13 @@ def load_model(settings: Settings):
     logger = logging.getLogger(__name__)
     logger.setLevel(settings.log_level)
 
-    model_external_url: Union[str, pathlib.Path] = settings.model_external_url
+    ai_model_external_url: Union[str, pathlib.Path] = settings.ai_model_external_url
    
     logger.info("[API::load_model] Machine Learning (ML) model " \
-                f"pickle file: {model_external_url}")
+                f"pickle file: {ai_model_external_url}")
 
     # Read the Pickled model from the file-system
-    model_filepath = pathlib.Path(model_external_url)
+    model_filepath = pathlib.Path(ai_model_external_url)
     model = None
     if not model_filepath.exists():
         err_msg = f"[API::load_model] The model file " \

@@ -8,7 +8,7 @@ import pydantic_settings
 
 from {{cookiecutter.project_name_underscores}}.settings.args import parse_args
 from {{cookiecutter.project_name_underscores}}.settings.defaults import (
-    MODEL_EXTERNAL_URL,
+    AI_MODEL_EXTERNAL_URL,
     DATA_LOADER_MODULE,
     LOCAL_DIR,
     LOCAL_TEMP_DIR,
@@ -25,7 +25,7 @@ class HashableBaseSettings(pydantic_settings.BaseSettings):
 
 
 class Settings(HashableBaseSettings):
-    model_external_url: Union[str, pathlib.Path] = MODEL_EXTERNAL_URL
+    ai_model_external_url: Union[str, pathlib.Path] = AI_MODEL_EXTERNAL_URL
     data_loader_module: Optional[str] = DATA_LOADER_MODULE
     local_dir: pathlib.Path = LOCAL_DIR
     local_temp_dir: pathlib.Path = LOCAL_TEMP_DIR
@@ -49,7 +49,7 @@ def get_settings() -> Settings:
         log_level_arg = "DEBUG"
 
     settings: Settings = Settings(
-        model_external_url=resulting_args.model_external_url,
+        ai_model_external_url=resulting_args.ai_model_external_url,
         data_loader_module=resulting_args.data_loader_module,
         local_dir=resulting_args.local_dir,
         local_temp_dir=resulting_args.local_temp_dir,
