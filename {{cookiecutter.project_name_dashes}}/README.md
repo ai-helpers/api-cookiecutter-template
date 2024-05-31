@@ -78,28 +78,28 @@ Access the ReDoc interface for an alternative documentation style.
 
 ## Project Structure
 
-  ├── {{cookiecutter.project_name_dashes}}
-  │   ├── .github                                         <- Github Actions CICD
-  │   ├── data
-  │   ├── docs                                            <- Sphinx documentation
-  │   ├── src   
-  │       └── {{cookiecutter.project_name_underscores}}   <- Core of project
-  │   │       ├── endpoints                               <- API endpoints definition
-  │   │       ├── settings                                <- settings
-  │   │       ├── __init__.py      
-  │   │       ├── app.py           
-  │   │       ├── cli.py           
-  │   │       ├── errors           
-  │   │       ├── load_model.py    
-  │   │       └── setup_logging.py 
-  │   ├── tasks                                           <- Makefile tasks
-  │   ├── tests                                           <- tests (units tests, data tests)
-  │   ├── .gitignore          
-  │   ├── .mypy.ini   
-  │   ├── Makefile   
-  │   ├── poetry.toml                       
-  │   ├── pyproject.toml   
-      └── README.md    
+    ├── {{cookiecutter.project_name_dashes}}
+    │   ├── .github                                         <- Github Actions CICD
+    │   ├── data
+    │   ├── docs                                            <- Sphinx documentation
+    │   ├── src   
+    │       └── {{cookiecutter.project_name_underscores}}   <- Core of project
+    │   │       ├── endpoints                               <- API endpoints definition
+    │   │       ├── settings                                <- settings
+    │   │       ├── __init__.py      
+    │   │       ├── app.py           
+    │   │       ├── cli.py           
+    │   │       ├── errors           
+    │   │       ├── load_model.py    
+    │   │       └── setup_logging.py 
+    │   ├── tasks                                           <- Makefile tasks
+    │   ├── tests                                           <- tests (units tests, data tests)
+    │   ├── .gitignore          
+    │   ├── .mypy.ini   
+    │   ├── Makefile   
+    │   ├── poetry.toml                       
+    │   ├── pyproject.toml   
+        └── README.md    
 
 ## Contributions
 
